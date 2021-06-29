@@ -5,8 +5,12 @@
 
 .sidebar {
   height: 100%;
-  width: 250px;
+  width: 4rem;
   background-color: var(--main-brand-color);
+  transition: all .4s;
+}
+.sidebar:hover {
+  width: 12rem;
 }
 
 .sidebar__list {
@@ -24,12 +28,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: all .6s;
 }
 
 .sidebar__row:hover {
   cursor: pointer;
   background-color: var(--dark-shades);
   filter: brightness(90%);
+  width: 12rem;
 }
 
 #sidebar--active {
@@ -45,4 +51,9 @@
 
 .sidebar__title {
   flex: 70%;
+  display: none;
+}
+
+.sidebar:hover .sidebar__title{
+  display: block;
 }
