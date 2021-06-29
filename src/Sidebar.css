@@ -1,0 +1,48 @@
+:root {
+  --main-brand-color: rgb(255, 168, 137);
+  --dark-shades: orangered;
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  background-color: var(--main-brand-color);
+}
+
+.sidebar__list {
+  height: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar__row {
+  width: 100%;
+  height: 60px;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar__row:hover {
+  cursor: pointer;
+  background-color: var(--dark-shades);
+  filter: brightness(90%);
+}
+
+#sidebar--active {
+  background-color: var(--dark-shades);
+  filter: brightness(90%);
+}
+
+.sidebar__icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+
+.sidebar__title {
+  flex: 70%;
+}

@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./Sidebar.css";
+import { SidebarData } from "./sidebarData";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="sidebar">
+      <ul className="sidebar__list">
+        {SidebarData.map((val, key) => {
+          return (
+            <li
+              key={key}
+              className="sidebar__row"
+              id={window.location.pathname == val.link && "sidebar--active"}
+              onClick={() => {
+                window.location.pathname = val.link;
+              }}
+            >
+              <div className="sidebar__icon">{val.icon}</div>
+              <div className="sidebar__title">{val.title}</div>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
